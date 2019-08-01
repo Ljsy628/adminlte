@@ -174,6 +174,7 @@ export default {
     },
     cp(idx) {
       console.log(this.list[idx]);
+
       this.list.push(this.list[idx]);
     },
     addbtn() {
@@ -195,6 +196,9 @@ export default {
     }
   },
   mounted() {
+    if ($ && $.AdminLTE && $.AdminLTE.layout) {
+      $.AdminLTE.layout.fix();
+    }
     // alert("抓取到vuex数据："+this.$store.state.test)
     $('input[name="daterange"]').daterangepicker(
       {
@@ -253,7 +257,7 @@ export default {
   }
 };
 </script>
-<style scope>
+<style scoped>
 .myupload {
   float: right;
 }

@@ -153,7 +153,7 @@ export default {
       msg: "数据",
       menuList: [
         {
-          text: "考勤管理",
+          text: "任务管理",
           isActive: false
         },
         {
@@ -167,6 +167,9 @@ export default {
     contentHeader
   },
   mounted() {
+    if ($ && $.AdminLTE && $.AdminLTE.layout) {
+      $.AdminLTE.layout.fix();
+    }
     $('input[name="daterange"]').daterangepicker(
       {
         ranges: {

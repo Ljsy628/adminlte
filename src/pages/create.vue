@@ -27,16 +27,23 @@
                 <thead>
                   <tr>
                     <!-- <th style="width: 10px">ID</th> -->
-                    <th>业务</th>
-                    <th>区域</th>
+                    <th>机器名</th>
+                    <!-- <th>区域</th> -->
                     <th>CPU</th>
                     <th>内存</th>
-                    <th>磁盘</th>
+                    <th>系统盘</th>
+                    <th>数据盘</th>
                     <th>网络</th>
                     <th>IP地址</th>
                     <th>子网掩码</th>
-                    <th>机器名</th>
-                    <th>组名</th>
+                    <th>网关</th>
+                    <th>宿主机</th>
+                    <th>存储</th>
+                    <th>过期时间</th>
+                    <th>业务组</th>
+                    <th>成本中心</th>
+                    <th>用户</th>
+
                     <th>操作</th>
                   </tr>
                 </thead>
@@ -56,25 +63,6 @@
               <div class="addbtn" @click="addbtn()">新增</div>
             </div>
             <!-- /.box-body -->
-            <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li>
-                  <a href="#">&laquo;</a>
-                </li>
-                <li>
-                  <a href="#">1</a>
-                </li>
-                <li>
-                  <a href="#">2</a>
-                </li>
-                <li>
-                  <a href="#">3</a>
-                </li>
-                <li>
-                  <a href="#">&raquo;</a>
-                </li>
-              </ul>
-            </div>
           </div>
           <!-- /.box -->
         </div>
@@ -100,15 +88,6 @@ export default {
             { name: "my_input93", value: "2C4G" },
             { name: "my_input73", value: "2C4G" },
             { name: "my_input107", value: "2C4G" },
-            { name: "my_input68", value: "2C4G" }
-          ]
-        },
-        {
-          clist: [
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input54", value: "2C4G" },
-            { name: "my_input62", value: "2C4G" },
             { name: "my_input93", value: "2C4G" },
             { name: "my_input93", value: "2C4G" },
             { name: "my_input93", value: "2C4G" },
@@ -128,6 +107,11 @@ export default {
             { name: "my_input93", value: "2C4G" },
             { name: "my_input73", value: "2C4G" },
             { name: "my_input107", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input73", value: "2C4G" },
+            { name: "my_input107", value: "2C4G" },
             { name: "my_input68", value: "2C4G" }
           ]
         },
@@ -137,6 +121,30 @@ export default {
             { name: "my_input75", value: "2C4G" },
             { name: "my_input54", value: "2C4G" },
             { name: "my_input62", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input73", value: "2C4G" },
+            { name: "my_input107", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input73", value: "2C4G" },
+            { name: "my_input107", value: "2C4G" },
+            { name: "my_input68", value: "2C4G" }
+          ]
+        },
+        {
+          clist: [
+            { name: "my_input75", value: "2C4G" },
+            { name: "my_input75", value: "2C4G" },
+            { name: "my_input54", value: "2C4G" },
+            { name: "my_input62", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input93", value: "2C4G" },
+            { name: "my_input73", value: "2C4G" },
+            { name: "my_input107", value: "2C4G" },
             { name: "my_input93", value: "2C4G" },
             { name: "my_input93", value: "2C4G" },
             { name: "my_input93", value: "2C4G" },
@@ -186,6 +194,11 @@ export default {
           { name: "my_input93", value: "" },
           { name: "my_input73", value: "" },
           { name: "my_input107", value: "" },
+          { name: "my_input93", value: "" },
+          { name: "my_input93", value: "" },
+          { name: "my_input93", value: "" },
+          { name: "my_input73", value: "" },
+          { name: "my_input107", value: "" },
           { name: "my_input68", value: "" }
         ]
       };
@@ -193,6 +206,9 @@ export default {
     }
   },
   mounted() {
+    if ($ && $.AdminLTE && $.AdminLTE.layout) {
+      $.AdminLTE.layout.fix();
+    }
     // alert("抓取到vuex数据："+this.$store.state.test)
     $('input[name="daterange"]').daterangepicker(
       {
@@ -251,7 +267,7 @@ export default {
   }
 };
 </script>
-<style scope>
+<style scoped>
 .addbtn {
   float: right;
   color: blue;

@@ -12,24 +12,7 @@
             <div class="box-header with-border">
               <!-- <h3 class="box-title">我的考勤记录</h3> -->
               <form action class="form-inline">
-                <div class="input-group" style="width:220px;">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control pull-right"
-                    name="daterange"
-                    readonly="readonly"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for>姓名：</label>
-                  <input type="text" class="form-control" placeholder="姓名" />
-                </div>
-                <div class="form-group">
-                  <button class="btn btn-primary">搜索</button>
-                </div>
+                <button type="button" class="btn btn-default recss">刷新</button>
               </form>
             </div>
             <!-- /.box-header -->
@@ -38,40 +21,35 @@
                 <thead>
                   <tr>
                     <!-- <th style="width: 10px">ID</th> -->
-                    <th>姓名</th>
-                    <th>日期</th>
-                    <th>开始</th>
-                    <th>结束</th>
+                    <th>任务组</th>
+                    <th>实例ID</th>
+                    <th>状态</th>
+                    <th>CPU</th>
+                    <th>内存</th>
+                    <th>磁盘</th>
+                    <th>网络</th>
+                    <th>IP地址</th>
+                    <th>子网掩码</th>
+                    <th>机器名</th>
+                    <th>组名</th>
+                    <th>操作</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <!-- <td>001</td> -->
-                    <td>张三</td>
-                    <td>2016-10-31</td>
-                    <td>10:00</td>
-                    <td>20:00</td>
-                  </tr>
-                  <tr>
-                    <!-- <td>002</td> -->
-                    <td>张三</td>
-                    <td>2016-11-01</td>
-                    <td>8:00</td>
-                    <td>20:00</td>
-                  </tr>
-                  <tr>
-                    <!-- <td>003</td> -->
-                    <td>张三</td>
-                    <td>2016-11-02</td>
-                    <td>8:00</td>
-                    <td>20:00</td>
-                  </tr>
-                  <tr>
-                    <!-- <td>004</td> -->
-                    <td>张三</td>
-                    <td>2016-11-03</td>
-                    <td>8:00</td>
-                    <td>20:00</td>
+                    <td>20190726-143001</td>
+                    <td>1</td>
+                    <td>active</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>50G</td>
+                    <td>EC DMZ</td>
+                    <td>172.25.50.215</td>
+                    <td>255.255.255.0</td>
+                    <td>KSSHVIP06196</td>
+                    <td>YUMC073</td>
+                    <th>关闭</th>
                   </tr>
                 </tbody>
               </table>
@@ -111,11 +89,11 @@ export default {
       msg: "数据",
       menuList: [
         {
-          text: "考勤管理",
+          text: "任务管理",
           isActive: false
         },
         {
-          text: "我的考勤记录",
+          text: "任务状态",
           isActive: true
         }
       ]
@@ -125,6 +103,9 @@ export default {
     contentHeader
   },
   mounted() {
+    if ($ && $.AdminLTE && $.AdminLTE.layout) {
+      $.AdminLTE.layout.fix();
+    }
     // alert("抓取到vuex数据："+this.$store.state.test)
     $('input[name="daterange"]').daterangepicker(
       {
@@ -184,3 +165,9 @@ export default {
   methods: {}
 };
 </script>
+<style scoped>
+.recss {
+  width: 83px !important;
+  height: 31px;
+}
+</style>

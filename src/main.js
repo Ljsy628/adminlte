@@ -21,4 +21,9 @@ require("./dist/js/demo.js")
 require("./dist/js/app.min.js")
 //require("./dist/js/pages/dashboard2.js")
 
-$(document).ajaxStart(function () { Pace.restart(); });
+$(document).ajaxStart(function () {
+  Pace.restart();
+});
+if ($ && $.AdminLTE && $.AdminLTE.layout) {
+  $.AdminLTE.layout.fix();
+}

@@ -168,7 +168,7 @@
           <li class="treeview">
             <a href="#">
               <i class="fa fa-files-o"></i>
-              <span>考勤管理</span>
+              <span>任务管理</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 <!-- <small class="label pull-right bg-green">new</small> -->
@@ -177,7 +177,7 @@
             <ul class="treeview-menu">
               <li>
                 <router-link to="attendance">
-                  <i class="fa fa-circle-o"></i>我的考勤记录
+                  <i class="fa fa-circle-o"></i>任务管理
                 </router-link>
               </li>
               <li>
@@ -193,7 +193,7 @@
           <li class="treeview">
             <a href="#">
               <i class="fa fa-th"></i>
-              <span>加班管理</span>
+              <span>区域管理</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 <!-- <small class="label pull-right bg-green">new</small> -->
@@ -482,3 +482,8 @@ export default {
   methods: {}
 };
 </script>
+<style scoped>
+.router-link-active {
+  color: #fff !important;
+}
+</style>
