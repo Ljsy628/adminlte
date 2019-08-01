@@ -15,7 +15,7 @@ import store from './store/index'
 import Hello from './components/Hello.vue'
 import create from './pages/create.vue'
 import csvcreate from './pages/csvcreate.vue'
-
+import vmmant from './pages/vmmant.vue'
 Vue.use(VueRouter)
 
 /* eslint-disable no-new */
@@ -34,16 +34,47 @@ Vue.use(VueRouter)
 // 通过 Vue.extend() 创建的组件构造器，
 // 或者，只是一个组件配置对象。
 // 我们晚点在讨论嵌套路由。
-const routes = [
-  { path: '/', name: "home", component: home },
-  { path: '/attendance', component: attendance },
-  { path: '/leave_record', component: leave_record },
-  { path: '/overtime_pass', component: overtime_pass },
-  { path: '/overtime_record', component: overtime_record },
-  { path: '/overtime_petitioner', component: overtime_petitioner },
-  { path: '/import_data', component: import_data },
-  { path: '/create', component: create },
-  { path: '/csvcreate', component: csvcreate }
+const routes = [{
+    path: '/',
+    name: "home",
+    component: home
+  },
+  {
+    path: '/attendance',
+    component: attendance
+  },
+  {
+    path: '/leave_record',
+    component: leave_record
+  },
+  {
+    path: '/overtime_pass',
+    component: overtime_pass
+  },
+  {
+    path: '/overtime_record',
+    component: overtime_record
+  },
+  {
+    path: '/overtime_petitioner',
+    component: overtime_petitioner
+  },
+  {
+    path: '/import_data',
+    component: import_data
+  },
+  {
+    path: '/create',
+    component: create
+  },
+  {
+    path: '/csvcreate',
+    component: csvcreate
+  },
+  {
+    path: '/vmmant',
+    component: vmmant
+  }
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置

@@ -26,16 +26,22 @@
                 <thead>
                   <tr>
                     <!-- <th style="width: 10px">ID</th> -->
-                    <th>业务</th>
-                    <th>区域</th>
+                    <th>机器名</th>
                     <th>CPU</th>
                     <th>内存</th>
-                    <th>磁盘</th>
+                    <th>系统盘</th>
+                    <th>数据盘</th>
                     <th>网络</th>
                     <th>IP地址</th>
                     <th>子网掩码</th>
-                    <th>机器名</th>
-                    <th>组名</th>
+                    <th>网关</th>
+                    <th>宿主机</th>
+                    <th>存储</th>
+                    <th>过期时间</th>
+                    <th>业务组</th>
+                    <th>成本中心</th>
+                    <th>用户</th>
+
                     <th>操作</th>
                   </tr>
                 </thead>
@@ -93,58 +99,78 @@ export default {
       list: [
         {
           clist: [
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input54", value: "2C4G" },
-            { name: "my_input62", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input73", value: "2C4G" },
-            { name: "my_input107", value: "2C4G" },
-            { name: "my_input68", value: "2C4G" }
+            { name: "my_input75", value: "copn1" },
+            { name: "my_input75", value: "2" },
+            { name: "my_input54", value: "4g" },
+            { name: "my_input62", value: "50g" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "EC DMZ" },
+            { name: "my_input93", value: "192.168.1.23" },
+            { name: "my_input73", value: "255.255.255.0" },
+            { name: "my_input107", value: "192.111.123.144" },
+            { name: "my_input93", value: "172.25.50.215" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "2018-11-25" },
+            { name: "my_input73", value: "业务组问题待定" },
+            { name: "my_input107", value: "5512" },
+            { name: "my_input68", value: "张三" }
           ]
         },
         {
           clist: [
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input54", value: "2C4G" },
-            { name: "my_input62", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input73", value: "2C4G" },
-            { name: "my_input107", value: "2C4G" },
-            { name: "my_input68", value: "2C4G" }
+            { name: "my_input75", value: "copn1" },
+            { name: "my_input75", value: "2" },
+            { name: "my_input54", value: "4g" },
+            { name: "my_input62", value: "50g" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "EC DMZ" },
+            { name: "my_input93", value: "192.168.1.23" },
+            { name: "my_input73", value: "255.255.255.0" },
+            { name: "my_input107", value: "192.111.123.144" },
+            { name: "my_input93", value: "172.25.50.215" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "2018-11-25" },
+            { name: "my_input73", value: "业务组问题待定" },
+            { name: "my_input107", value: "5512" },
+            { name: "my_input68", value: "张三" }
           ]
         },
         {
           clist: [
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input54", value: "2C4G" },
-            { name: "my_input62", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input73", value: "2C4G" },
-            { name: "my_input107", value: "2C4G" },
-            { name: "my_input68", value: "2C4G" }
+            { name: "my_input75", value: "copn1" },
+            { name: "my_input75", value: "2" },
+            { name: "my_input54", value: "4g" },
+            { name: "my_input62", value: "50g" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "EC DMZ" },
+            { name: "my_input93", value: "192.168.1.23" },
+            { name: "my_input73", value: "255.255.255.0" },
+            { name: "my_input107", value: "192.111.123.144" },
+            { name: "my_input93", value: "172.25.50.215" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "2018-11-25" },
+            { name: "my_input73", value: "业务组问题待定" },
+            { name: "my_input107", value: "5512" },
+            { name: "my_input68", value: "张三" }
           ]
         },
         {
           clist: [
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input75", value: "2C4G" },
-            { name: "my_input54", value: "2C4G" },
-            { name: "my_input62", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input93", value: "2C4G" },
-            { name: "my_input73", value: "2C4G" },
-            { name: "my_input107", value: "2C4G" },
-            { name: "my_input68", value: "2C4G" }
+            { name: "my_input75", value: "copn1" },
+            { name: "my_input75", value: "2" },
+            { name: "my_input54", value: "4g" },
+            { name: "my_input62", value: "50g" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "EC DMZ" },
+            { name: "my_input93", value: "192.168.1.23" },
+            { name: "my_input73", value: "255.255.255.0" },
+            { name: "my_input107", value: "192.111.123.144" },
+            { name: "my_input93", value: "172.25.50.215" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "2018-11-25" },
+            { name: "my_input73", value: "业务组问题待定" },
+            { name: "my_input107", value: "5512" },
+            { name: "my_input68", value: "张三" }
           ]
         }
       ],

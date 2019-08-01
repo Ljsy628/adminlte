@@ -168,6 +168,28 @@
           <li class="treeview">
             <a href="#">
               <i class="fa fa-files-o"></i>
+              <span>VM管理</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                <!-- <small class="label pull-right bg-green">new</small> -->
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <router-link to="vmmant">
+                  <i class="fa fa-circle-o"></i>VM管理
+                </router-link>
+              </li>
+              <!-- <li>
+                <router-link to="leave_record">
+                  <i class="fa fa-circle-o"></i>VM创建
+                </router-link>
+              </li>-->
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-files-o"></i>
               <span>任务管理</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -180,14 +202,6 @@
                   <i class="fa fa-circle-o"></i>任务管理
                 </router-link>
               </li>
-              <li>
-                <router-link to="leave_record">
-                  <i class="fa fa-circle-o"></i>调休使用记录
-                </router-link>
-              </li>
-              <!--<li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>-->
-              <!--<li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>-->
-              <!--<li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>-->
             </ul>
           </li>
           <li class="treeview">
@@ -202,10 +216,10 @@
             <ul class="treeview-menu">
               <li>
                 <router-link to="overtime_record">
-                  <i class="fa fa-circle-o"></i> 加班记录
+                  <i class="fa fa-circle-o"></i> 区域管理
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link to="overtime_petitioner">
                   <i class="fa fa-circle-o"></i> 加班申请
                 </router-link>
@@ -214,27 +228,10 @@
                 <router-link to="overtime_pass">
                   <i class="fa fa-circle-o"></i> 加班审批
                 </router-link>
-              </li>
+              </li>-->
               <!--<li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>-->
               <!--<li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>-->
               <!--<li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>-->
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-pie-chart"></i>
-              <span>数据管理</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-                <!-- <small class="label pull-right bg-green">new</small> -->
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li>
-                <router-link to="import_data">
-                  <i class="fa fa-circle-o"></i> 导入数据
-                </router-link>
-              </li>
             </ul>
           </li>
 
