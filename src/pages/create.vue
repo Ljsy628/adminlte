@@ -69,10 +69,10 @@
                     </td>
                   </tr>
                 </tbody>
+                <div class="addbtn" @click="addbtn()">
+                  <img src="../../static/xz.png" alt />
+                </div>
               </table>
-              <div class="addbtn" @click="addbtn()">
-                <img src="../../static/xz.png" alt />
-              </div>
             </div>
             <!-- /.box-body -->
           </div>
@@ -95,16 +95,16 @@ export default {
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
             { name: "my_input62", value: "50g", isf: true },
-            { name: "my_input54", value: "150g" },
-            { name: "my_input54", value: "EC DMZ" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
             { name: "my_input73", value: "255.255.255.0" },
             { name: "my_input107", value: "192.111.123.144" },
             { name: "my_input93", value: "172.25.50.215" },
-            { name: "my_input54", value: "150g" },
+            { name: "my_input93", value: "150g" },
             { name: "my_input93", value: "2018-11-25" },
             { name: "my_input73", value: "业务组问题待定" },
-            { name: "my_input54", value: "5512" },
+            { name: "my_input107", value: "5512" },
             { name: "my_input68", value: "张三" }
           ]
         },
@@ -114,16 +114,16 @@ export default {
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
             { name: "my_input62", value: "50g", isf: true },
-            { name: "my_input54", value: "150g" },
-            { name: "my_input54", value: "EC DMZ" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
             { name: "my_input73", value: "255.255.255.0" },
             { name: "my_input107", value: "192.111.123.144" },
             { name: "my_input93", value: "172.25.50.215" },
-            { name: "my_input54", value: "150g" },
+            { name: "my_input93", value: "150g" },
             { name: "my_input93", value: "2018-11-25" },
             { name: "my_input73", value: "业务组问题待定" },
-            { name: "my_input54", value: "5512" },
+            { name: "my_input107", value: "5512" },
             { name: "my_input68", value: "张三" }
           ]
         },
@@ -133,16 +133,16 @@ export default {
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
             { name: "my_input62", value: "50g", isf: true },
-            { name: "my_input54", value: "150g" },
-            { name: "my_input54", value: "EC DMZ" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
             { name: "my_input73", value: "255.255.255.0" },
             { name: "my_input107", value: "192.111.123.144" },
             { name: "my_input93", value: "172.25.50.215" },
-            { name: "my_input54", value: "150g" },
+            { name: "my_input93", value: "150g" },
             { name: "my_input93", value: "2018-11-25" },
             { name: "my_input73", value: "业务组问题待定" },
-            { name: "my_input54", value: "5512" },
+            { name: "my_input107", value: "5512" },
             { name: "my_input68", value: "张三" }
           ]
         },
@@ -152,16 +152,16 @@ export default {
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
             { name: "my_input62", value: "50g", isf: true },
-            { name: "my_input54", value: "150g" },
-            { name: "my_input54", value: "EC DMZ" },
+            { name: "my_input93", value: "150g" },
+            { name: "my_input93", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
             { name: "my_input73", value: "255.255.255.0" },
             { name: "my_input107", value: "192.111.123.144" },
             { name: "my_input93", value: "172.25.50.215" },
-            { name: "my_input54", value: "150g" },
+            { name: "my_input93", value: "150g" },
             { name: "my_input93", value: "2018-11-25" },
             { name: "my_input73", value: "业务组问题待定" },
-            { name: "my_input54", value: "5512" },
+            { name: "my_input107", value: "5512" },
             { name: "my_input68", value: "张三" }
           ]
         }
@@ -280,8 +280,12 @@ export default {
 };
 </script>
 <style scoped>
+.table-bordered {
+  position: relative;
+}
 .box-body {
   overflow: scroll;
+  position: relative;
 }
 ::-webkit-scrollbar-track-piece {
   background-color: #f8f8f8;
@@ -300,7 +304,10 @@ export default {
 }
 
 .addbtn {
-  float: right;
+  position: absolute;
+  right: 10px;
+  width: 25px;
+  margin-bottom: 15px;
   color: blue;
   padding-right: 25px;
   margin-top: 10px;
@@ -353,7 +360,7 @@ export default {
   height: 25px;
 }
 .addbtn img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 </style>

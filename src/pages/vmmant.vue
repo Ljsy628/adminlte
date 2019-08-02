@@ -99,7 +99,6 @@
                     <th>内存</th>
                     <th>系统盘</th>
                     <th>存储盘</th>
-                    <th>网络</th>
                     <th>IP地址</th>
                     <th>子网掩码</th>
                     <th>组名</th>
@@ -137,12 +136,54 @@
                     <td>{{item.endtime}}</td>
                     <td>{{item.user}}</td>
                     <td>{{item.cbzx}}</td>
-                    <td
-                      class="changepz"
-                      @click="changepz"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                    >修改配置</td>
+                    <td>
+                      <div class="btn-group1">
+                        <button
+                          type="button"
+                          class="btn btn-default dropdown-toggle"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          更多操作
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu1">
+                          <li>
+                            <a href="#">开机</a>
+                          </li>
+                          <li role="separator" class="divider"></li>
+                          <li>
+                            <div class="off">
+                              <span>关机</span>
+                              <span>强制关机</span>
+                            </div>
+                          </li>
+                          <li role="separator" class="divider"></li>
+                          <li>
+                            <div class="off">
+                              <span>重启</span>
+                              <span>强制重启</span>
+                            </div>
+                          </li>
+                          <li role="separator" class="divider"></li>
+                          <li>
+                            <a href="#">删除</a>
+                          </li>
+                          <li role="separator" class="divider"></li>
+
+                          <li>
+                            <a
+                              href="#"
+                              class="changepz"
+                              @click="changepz"
+                              data-toggle="modal"
+                              data-target="#exampleModal"
+                            >修改配置</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -192,37 +233,31 @@
           </div>
           <div class="modal-body">
             <div class="modal-body_main">
-              <div class="modal-body_left">规格:</div>
+              <div class="modal-body_left">CPU:</div>
               <div class="modal-body_right">
-                <input type="text" v-model="changeSetting.guige.value" />
+                <input type="text" v-model="changeSetting.cpu.value" />
               </div>
             </div>
             <div class="modal-body_main">
-              <div class="modal-body_left">储存盘:</div>
+              <div class="modal-body_left">内存:</div>
               <div class="modal-body_right">
-                <input
-                  type="text"
-                  v-for="(item,index) in changeSetting.rom.value"
-                  :key="index"
-                  v-model="changeSetting.rom.value[index]"
-                />
+                <input type="text" v-model="changeSetting.ram.value" />
+              </div>
+            </div>
+            <div class="modal-body_main modal-body_main_df">
+              <div class="modal-body_left">数据盘:</div>
+              <div class="modal-body_right">
+                <div v-for="(item,index) in changeSetting.rom.value" :key="index" class="sub">
+                  <input type="text" v-model="changeSetting.rom.value[index]" />
+                  <span class="listj" @click="removeitem(index)">-</span>
+                </div>
+
                 <span class="active" @click="addrom1">+</span>
               </div>
             </div>
+
             <div class="modal-body_main">
-              <div class="modal-body_left">镜像:</div>
-              <div class="modal-body_right">
-                <input type="text" v-model="changeSetting.jingxiang.value" disabled />
-              </div>
-            </div>
-            <div class="modal-body_main">
-              <div class="modal-body_left">类型:</div>
-              <div class="modal-body_right">
-                <input type="text" v-model="changeSetting.type.value" disabled />
-              </div>
-            </div>
-            <div class="modal-body_main">
-              <div class="modal-body_left">网络:</div>
+              <div class="modal-body_left">区域:</div>
               <div class="modal-body_right">
                 <input type="text" v-model="changeSetting.wan.value" disabled />
               </div>
@@ -233,34 +268,11 @@
                 <input type="text" v-model="changeSetting.ip.value" disabled />
               </div>
             </div>
+
             <div class="modal-body_main">
-              <div class="modal-body_left">子网掩码:</div>
-              <div class="modal-body_right">
-                <input type="text" v-model="changeSetting.sub.value" disabled />
-              </div>
-            </div>
-            <div class="modal-body_main">
-              <div class="modal-body_left">网关地址:</div>
-              <div class="modal-body_right">
-                <input type="text" v-model="changeSetting.lan.value" disabled />
-              </div>
-            </div>
-            <div class="modal-body_main">
-              <div class="modal-body_left">字段1:</div>
-              <div class="modal-body_right">
-                <input type="text" v-model="changeSetting.attr.value" disabled />
-              </div>
-            </div>
-            <div class="modal-body_main">
-              <div class="modal-body_left">机器名:</div>
+              <div class="modal-body_left">主机名:</div>
               <div class="modal-body_right">
                 <input type="text" v-model="changeSetting.machine.value" disabled />
-              </div>
-            </div>
-            <div class="modal-body_main">
-              <div class="modal-body_left">机器组:</div>
-              <div class="modal-body_right">
-                <input type="text" v-model="changeSetting.machineGroup.value" disabled />
               </div>
             </div>
           </div>
@@ -374,12 +386,7 @@
                 <input type="text" v-model="changelist.rom1" />
               </div>
             </div>
-            <div class="modal-body_main">
-              <div class="modal-body_left">网络:</div>
-              <div class="modal-body_right">
-                <input type="text" v-model="changelist.wan" />
-              </div>
-            </div>
+
             <div class="modal-body_main">
               <div class="modal-body_left">IP地址:</div>
               <div class="modal-body_right">
@@ -448,7 +455,8 @@ export default {
   data() {
     return {
       changeSetting: {
-        guige: { value: "2C4G", option: true },
+        cpu: { value: "2", option: true },
+        ram: { value: "4G", option: true },
         rom: { value: [150], option: true },
         jingxiang: { value: "CentOS", option: false },
         type: { value: "A", option: false },
@@ -501,6 +509,12 @@ export default {
   },
 
   methods: {
+    removeitem(idx) {
+      console.log(idx);
+      if (idx > 0) {
+        this.changeSetting.rom.value.splice(idx, 1);
+      }
+    },
     addrom1() {
       this.changeSetting.rom.value.push("");
     },
@@ -583,6 +597,27 @@ export default {
 };
 </script>
 <style scoped>
+.sub {
+  padding-left: 10px;
+}
+.listj {
+  font-size: 18px;
+  cursor: pointer;
+}
+.modal-body_main_df {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start !important;
+}
+.modal-body_main_df .modal-body_left {
+  margin-top: 2px;
+}
+.dropdown-menu1 {
+  left: -50px;
+}
+.btn-group1 {
+  position: relative;
+}
 .modal-body_right {
   position: relative;
   display: flex;
@@ -595,9 +630,8 @@ export default {
 .active {
   font-size: 25px;
   position: absolute;
-  right: -20px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: -30px;
+  top: -4px;
   cursor: pointer;
 }
 .modal_body {

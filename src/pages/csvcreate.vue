@@ -17,7 +17,6 @@
                     <input type="file" id="exampleInputFile" />
                   </div>
                 </div>
-                <button type="button" class="btn btn-primary btn-create">上传</button>
               </form>
             </div>
             <!-- /.box-header -->
@@ -56,9 +55,13 @@
                       />
                     </td>
                     <td>
-                      <span @click="del(index)" class="b">删除</span>
+                      <span @click="del(index)" class="b">
+                        <img src="../../static/iconfontshanchu1.png" alt />
+                      </span>
 
-                      <span @click="cp(index)" class="b">复制</span>
+                      <span @click="cp(index)" class="b">
+                        <img src="../../static/fuzhi.png" alt />
+                      </span>
                     </td>
                   </tr>
                 </tbody>
@@ -289,6 +292,24 @@ export default {
 };
 </script>
 <style scoped>
+::-webkit-scrollbar-track-piece {
+  background-color: #f8f8f8;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  background-clip: padding-box;
+  min-height: 28px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+.box-body {
+  overflow: scroll;
+}
 .myupload {
   float: right;
 }
@@ -307,6 +328,10 @@ export default {
 .form-inline {
   display: flex;
   flex-direction: row;
+}
+.b img {
+  width: 25px;
+  height: 25px;
 }
 .btn-create {
   width: 100px;
