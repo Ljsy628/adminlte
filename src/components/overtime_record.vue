@@ -78,7 +78,7 @@
                     </td>
                     <td
                       class="diff_btm"
-                      @click="name_click(item.type)"
+                      @click="name_click(item.type,index)"
                       data-toggle="modal"
                       data-target="#exampleModal2"
                     >{{item.name}}</td>
@@ -251,11 +251,11 @@
                     <div class="main1">
                       <span>
                         <div>区域名称:</div>
-                        <input type="text" placeholder="请输入区域名称" />
+                        <input type="text" placeholder="请输入区域名称" v-model="changedata.name" />
                       </span>
                       <span>
                         <div>选择云类型:</div>
-                        <select v-model="fromdata.option" @change="selectchange(fromdata)">
+                        <select v-model="changedata.type" @change="selectchange(changedata)">
                           <option
                             v-for="(item,index) in selectdata"
                             :key="index"
@@ -265,31 +265,39 @@
                       </span>
                       <span v-if="selectFlag">
                         <div>endpoint:</div>
-                        <input type="text" placeholder="请输入区域名称" />
+                        <input type="text" placeholder="请输入endpoint" v-model="changedata.endpoint" />
                       </span>
                       <span v-if="selectFlag">
                         <div>accesskey:</div>
-                        <input type="text" placeholder="请输入区域名称" />
+                        <input
+                          type="text"
+                          placeholder="请输入accesskey"
+                          v-model="changedata.accesskey"
+                        />
                       </span>
                       <span v-if="selectFlag">
                         <div>secretkey:</div>
-                        <input type="text" placeholder="请输入区域名称" />
+                        <input
+                          type="text"
+                          placeholder="请输入secretkey"
+                          v-model="changedata.secretkey"
+                        />
                       </span>
                       <span v-if="!selectFlag">
                         <div>vmware ip:</div>
-                        <input type="text" placeholder="请输入区域名称" />
+                        <input type="text" placeholder="请输入vmware ip" v-model="changedata.ip" />
                       </span>
                       <span v-if="!selectFlag">
                         <div>vmware 账号:</div>
-                        <input type="text" placeholder="请输入区域名称" />
+                        <input type="text" placeholder="请输入vmware 账号" v-model="changedata.username" />
                       </span>
                       <span v-if="!selectFlag">
                         <div>vmware 密码:</div>
-                        <input type="text" placeholder="请输入区域名称" />
+                        <input type="text" placeholder="请输入vmware 密码" v-model="changedata.password" />
                       </span>
                       <span>
                         <div>portal:</div>
-                        <input type="text" placeholder="请输入区域名称" />
+                        <input type="text" placeholder="请输入portal" v-model="changedata.url" />
                       </span>
                     </div>
                     <div class="modal-footer">
@@ -474,6 +482,7 @@ import contentHeader from "../components/content_header";
 export default {
   data() {
     return {
+      changedata: {},
       tabflag: true, //
       list: [
         {
@@ -565,15 +574,18 @@ export default {
   },
 
   methods: {
-    name_click(e) {
+    name_click(e, idx) {
       if (e == "vmware") {
         this.tabflag = false;
       } else {
         this.tabflag = true;
       }
+      console.log(this.tabflag);
+      this.changedata = this.list[idx];
+      console.log(this.changedata);
     },
     selectchange(item) {
-      if (item.option == "vmware") {
+      if (item.option == "vmware" || item.type == "vmware") {
         this.selectFlag = false;
       } else {
         this.selectFlag = true;
@@ -654,6 +666,9 @@ export default {
 };
 </script>
 <style scoped>
+.modal-content {
+  min-height: 432px;
+}
 .modal-dialog1 {
   width: 800px;
 }

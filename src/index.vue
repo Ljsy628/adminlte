@@ -219,26 +219,8 @@
                   <i class="fa fa-circle-o"></i> 区域管理
                 </router-link>
               </li>
-              <!-- <li>
-                <router-link to="overtime_petitioner">
-                  <i class="fa fa-circle-o"></i> 加班申请
-                </router-link>
-              </li>
-              <li>
-                <router-link to="overtime_pass">
-                  <i class="fa fa-circle-o"></i> 加班审批
-                </router-link>
-              </li>-->
-              <!--<li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>-->
-              <!--<li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>-->
-              <!--<li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>-->
             </ul>
           </li>
-
-          <!-- <li class="header">LABELS</li>
-          <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-          <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-          <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>-->
         </ul>
       </section>
       <!-- /.sidebar -->

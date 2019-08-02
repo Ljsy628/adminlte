@@ -58,6 +58,29 @@
                   </div>
                 </div>
               </form>
+              <div class="selectq">
+                <select name id aria-placeholder="输入区域">
+                  <option value="华东">请选择筛选区域</option>
+
+                  <option value="华东">华东</option>
+                  <option value="华东">华东</option>
+                  <option value="华东">华东</option>
+                  <option value="华东">华东</option>
+                </select>
+                <select name id aria-placeholder="输入区域">
+                  <option value="华东">请选择宿主机</option>
+                  <option value="华东">CT1</option>
+                  <option value="华东">CT2</option>
+                  <option value="华东">CT3</option>
+                </select>
+                <select name id aria-placeholder="输入区域">
+                  <option value="华东">通过机器名/IP筛选</option>
+                  <option value="华东">机器名</option>
+                  <option value="华东">IP</option>
+                </select>
+                <input type="text" placeholder="输入搜索内容" />
+                <button type="button" class="btn">查询</button>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -171,68 +194,73 @@
             <div class="modal-body_main">
               <div class="modal-body_left">规格:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.guige.value" />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">储存盘:</div>
               <div class="modal-body_right">
-                <input type="text" v-for="(item,index) in addrom" :key="index" />
+                <input
+                  type="text"
+                  v-for="(item,index) in changeSetting.rom.value"
+                  :key="index"
+                  v-model="changeSetting.rom.value[index]"
+                />
                 <span class="active" @click="addrom1">+</span>
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">镜像:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.jingxiang.value" disabled />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">类型:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.type.value" disabled />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">网络:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.wan.value" disabled />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">IP地址:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.ip.value" disabled />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">子网掩码:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.sub.value" disabled />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">网关地址:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.lan.value" disabled />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">字段1:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.attr.value" disabled />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">机器名:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.machine.value" disabled />
               </div>
             </div>
             <div class="modal-body_main">
               <div class="modal-body_left">机器组:</div>
               <div class="modal-body_right">
-                <input type="text" />
+                <input type="text" v-model="changeSetting.machineGroup.value" disabled />
               </div>
             </div>
           </div>
@@ -388,6 +416,18 @@
                 <input type="text" v-model="changelist.endtime" />
               </div>
             </div>
+            <div class="modal-body_main">
+              <div class="modal-body_left">用户:</div>
+              <div class="modal-body_right">
+                <input type="text" v-model="changelist.user" />
+              </div>
+            </div>
+            <div class="modal-body_main">
+              <div class="modal-body_left">成本中心:</div>
+              <div class="modal-body_right">
+                <input type="text" v-model="changelist.cbzx" />
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
@@ -407,7 +447,19 @@ import contentHeader from "../components/content_header";
 export default {
   data() {
     return {
-      addrom: [1],
+      changeSetting: {
+        guige: { value: "2C4G", option: true },
+        rom: { value: [150], option: true },
+        jingxiang: { value: "CentOS", option: false },
+        type: { value: "A", option: false },
+        wan: { value: "EC DMZ", option: false },
+        ip: { value: "172.25.50.215", option: false },
+        sub: { value: "255.255.255.0", option: false },
+        lan: { value: "172.25.50.1", option: false },
+        attr: { value: "250", option: false },
+        machine: { value: "KSSHVIP06196", option: false },
+        machineGroup: { value: "YUMC073", option: false }
+      },
       changelist: "",
       listinfo: [
         {
@@ -450,7 +502,7 @@ export default {
 
   methods: {
     addrom1() {
-      this.addrom.push(1);
+      this.changeSetting.rom.value.push("");
     },
     toname(e) {
       console.log(e);
@@ -608,5 +660,15 @@ export default {
 .diff_btm {
   color: #66ccff;
   cursor: pointer;
+}
+.selectq {
+  float: right;
+  /* width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+}
+.form-inline {
+  float: left;
 }
 </style>

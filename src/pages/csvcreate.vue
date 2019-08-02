@@ -48,7 +48,12 @@
                 <tbody>
                   <tr v-for="(item,index) in list" :key="index">
                     <td v-for="(item1,index1) in item.clist" :key="index1">
-                      <input type="text" :class="item1.name" v-model="item1.value" />
+                      <input
+                        type="text"
+                        :class="item1.name"
+                        v-model="item1.value"
+                        :disabled="item1.isf"
+                      />
                     </td>
                     <td>
                       <span @click="del(index)" class="b">删除</span>
@@ -102,7 +107,7 @@ export default {
             { name: "my_input75", value: "copn1" },
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
-            { name: "my_input62", value: "50g" },
+            { name: "my_input62", value: "50g", isf: true },
             { name: "my_input93", value: "150g" },
             { name: "my_input93", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
@@ -121,7 +126,7 @@ export default {
             { name: "my_input75", value: "copn1" },
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
-            { name: "my_input62", value: "50g" },
+            { name: "my_input62", value: "50g", isf: true },
             { name: "my_input93", value: "150g" },
             { name: "my_input93", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
@@ -140,7 +145,7 @@ export default {
             { name: "my_input75", value: "copn1" },
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
-            { name: "my_input62", value: "50g" },
+            { name: "my_input62", value: "50g", isf: true },
             { name: "my_input93", value: "150g" },
             { name: "my_input93", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
@@ -159,7 +164,7 @@ export default {
             { name: "my_input75", value: "copn1" },
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
-            { name: "my_input62", value: "50g" },
+            { name: "my_input62", value: "50g", isf: true },
             { name: "my_input93", value: "150g" },
             { name: "my_input93", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },

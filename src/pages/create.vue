@@ -59,14 +59,20 @@
                       />
                     </td>
                     <td>
-                      <span @click="del(index)" class="b">删除</span>
+                      <span @click="del(index)" class="b">
+                        <img src="../../static/iconfontshanchu1.png" alt />
+                      </span>
 
-                      <span @click="cp(index)" class="b">复制</span>
+                      <span @click="cp(index)" class="b">
+                        <img src="../../static/fuzhi.png" alt />
+                      </span>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <div class="addbtn" @click="addbtn()">新增</div>
+              <div class="addbtn" @click="addbtn()">
+                <img src="../../static/xz.png" alt />
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
@@ -89,16 +95,16 @@ export default {
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
             { name: "my_input62", value: "50g", isf: true },
-            { name: "my_input93", value: "150g" },
-            { name: "my_input93", value: "EC DMZ" },
+            { name: "my_input54", value: "150g" },
+            { name: "my_input54", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
             { name: "my_input73", value: "255.255.255.0" },
             { name: "my_input107", value: "192.111.123.144" },
             { name: "my_input93", value: "172.25.50.215" },
-            { name: "my_input93", value: "150g" },
+            { name: "my_input54", value: "150g" },
             { name: "my_input93", value: "2018-11-25" },
             { name: "my_input73", value: "业务组问题待定" },
-            { name: "my_input107", value: "5512" },
+            { name: "my_input54", value: "5512" },
             { name: "my_input68", value: "张三" }
           ]
         },
@@ -108,16 +114,16 @@ export default {
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
             { name: "my_input62", value: "50g", isf: true },
-            { name: "my_input93", value: "150g" },
-            { name: "my_input93", value: "EC DMZ" },
+            { name: "my_input54", value: "150g" },
+            { name: "my_input54", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
             { name: "my_input73", value: "255.255.255.0" },
             { name: "my_input107", value: "192.111.123.144" },
             { name: "my_input93", value: "172.25.50.215" },
-            { name: "my_input93", value: "150g" },
+            { name: "my_input54", value: "150g" },
             { name: "my_input93", value: "2018-11-25" },
             { name: "my_input73", value: "业务组问题待定" },
-            { name: "my_input107", value: "5512" },
+            { name: "my_input54", value: "5512" },
             { name: "my_input68", value: "张三" }
           ]
         },
@@ -127,16 +133,16 @@ export default {
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
             { name: "my_input62", value: "50g", isf: true },
-            { name: "my_input93", value: "150g" },
-            { name: "my_input93", value: "EC DMZ" },
+            { name: "my_input54", value: "150g" },
+            { name: "my_input54", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
             { name: "my_input73", value: "255.255.255.0" },
             { name: "my_input107", value: "192.111.123.144" },
             { name: "my_input93", value: "172.25.50.215" },
-            { name: "my_input93", value: "150g" },
+            { name: "my_input54", value: "150g" },
             { name: "my_input93", value: "2018-11-25" },
             { name: "my_input73", value: "业务组问题待定" },
-            { name: "my_input107", value: "5512" },
+            { name: "my_input54", value: "5512" },
             { name: "my_input68", value: "张三" }
           ]
         },
@@ -146,16 +152,16 @@ export default {
             { name: "my_input75", value: "2" },
             { name: "my_input54", value: "4g" },
             { name: "my_input62", value: "50g", isf: true },
-            { name: "my_input93", value: "150g" },
-            { name: "my_input93", value: "EC DMZ" },
+            { name: "my_input54", value: "150g" },
+            { name: "my_input54", value: "EC DMZ" },
             { name: "my_input93", value: "192.168.1.23" },
             { name: "my_input73", value: "255.255.255.0" },
             { name: "my_input107", value: "192.111.123.144" },
             { name: "my_input93", value: "172.25.50.215" },
-            { name: "my_input93", value: "150g" },
+            { name: "my_input54", value: "150g" },
             { name: "my_input93", value: "2018-11-25" },
             { name: "my_input73", value: "业务组问题待定" },
-            { name: "my_input107", value: "5512" },
+            { name: "my_input54", value: "5512" },
             { name: "my_input68", value: "张三" }
           ]
         }
@@ -274,6 +280,25 @@ export default {
 };
 </script>
 <style scoped>
+.box-body {
+  overflow: scroll;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #f8f8f8;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  background-clip: padding-box;
+  min-height: 28px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+
 .addbtn {
   float: right;
   color: blue;
@@ -322,5 +347,13 @@ export default {
 .b {
   color: #66ccff;
   cursor: pointer;
+}
+.b img {
+  width: 25px;
+  height: 25px;
+}
+.addbtn img {
+  width: 30px;
+  height: 30px;
 }
 </style>

@@ -49,7 +49,22 @@
                     <td>255.255.255.0</td>
                     <td>KSSHVIP06196</td>
                     <td>YUMC073</td>
-                    <th>关闭</th>
+                    <th class="btn">取消</th>
+                  </tr>
+                  <tr>
+                    <!-- <td>001</td> -->
+                    <td>20190726-143001</td>
+                    <td>1</td>
+                    <td>active</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>50G</td>
+                    <td>EC DMZ</td>
+                    <td>172.25.50.215</td>
+                    <td>255.255.255.0</td>
+                    <td>KSSHVIP06196</td>
+                    <td>YUMC073</td>
+                    <th class="btn">重启</th>
                   </tr>
                 </tbody>
               </table>
@@ -169,5 +184,8 @@ export default {
 .recss {
   width: 83px !important;
   height: 31px;
+}
+.btn {
+  color: rgba(129, 216, 207, 1);
 }
 </style>
