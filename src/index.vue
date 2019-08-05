@@ -21,11 +21,6 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-            <li>
-              <a href="#">
-                <span class="hidden-xs">您当前拥有0积分</span>
-              </a>
-            </li>
             <!-- Messages: style can be found in dropdown.less-->
             <!-- Notifications: style can be found in dropdown.less -->
             <li class="dropdown notifications-menu">
@@ -76,7 +71,7 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="./dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
-                <span class="hidden-xs">张三</span>
+                <span class="hidden-xs">admin</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
@@ -84,7 +79,7 @@
                   <img src="./dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
 
                   <p>
-                    张三 - 前端开发者
+                    admin - 前端开发者
                     <small>注册日期：2016年9月14日</small>
                   </p>
                 </li>
@@ -135,7 +130,7 @@
             <img src="./dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
           </div>
           <div class="pull-left info">
-            <p>张三</p>
+            <p>admin</p>
             <a href="#">
               <i class="fa fa-circle text-success"></i>在线
             </a>
@@ -165,15 +160,15 @@
             <!--<li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
             <!--</ul>-->
           </li>
-          <li class="treeview">
-            <a href="#">
+          <li class="x">
+            <router-link to="vmmant">
               <i class="fa fa-files-o"></i>
               <span>VM管理</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 <!-- <small class="label pull-right bg-green">new</small> -->
               </span>
-            </a>
+            </router-link>
             <ul class="treeview-menu">
               <li>
                 <router-link to="vmmant">
@@ -188,14 +183,14 @@
             </ul>
           </li>
           <li class="treeview">
-            <a href="#">
+            <router-link to="attendance">
               <i class="fa fa-files-o"></i>
               <span>任务管理</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 <!-- <small class="label pull-right bg-green">new</small> -->
               </span>
-            </a>
+            </router-link>
             <ul class="treeview-menu">
               <li>
                 <router-link to="attendance">
@@ -205,14 +200,14 @@
             </ul>
           </li>
           <li class="treeview">
-            <a href="#">
+            <router-link to="overtime_record">
               <i class="fa fa-th"></i>
               <span>区域管理</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 <!-- <small class="label pull-right bg-green">new</small> -->
               </span>
-            </a>
+            </router-link>
             <ul class="treeview-menu">
               <li>
                 <router-link to="overtime_record">
