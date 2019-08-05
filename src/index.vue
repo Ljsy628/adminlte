@@ -79,7 +79,6 @@
                   <img src="./dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
 
                   <p>
-                    admin - 前端开发者
                     <small>注册日期：2016年9月14日</small>
                   </p>
                 </li>
