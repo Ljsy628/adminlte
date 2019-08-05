@@ -8,7 +8,7 @@
         <span class="logo-mini">A</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg">
-          <span>百胜中国云享平台</span>
+          <span>云享平台</span>
         </span>
       </a>
 

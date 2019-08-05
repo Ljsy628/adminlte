@@ -141,12 +141,13 @@ export function downloadFile(url, param) {
 }
 
 
-export function putList(url, data) { //put
+export function putList(url, data) {
   return axios.put(url, data)
     .then((res) => {
       return Promise.resolve(res.data)
     })
     .catch((res) => {
+
       if (res.status === 400) {
         return Promise.reject(res.data.message || "操作失败！")
       } else if (res.status === 500) {
